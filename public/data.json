@@ -1,0 +1,45 @@
+[ 
+    {
+      "id": 1,
+      "name": "Dr. Halima",
+      "title": "How it all started",
+      "member": "5 months",
+      "last": "Saturday afternoon",
+      "activity": 2,
+      "img": "../src/images/avatar.png"
+    },
+    {
+      "id": 2,
+      "name": "S.E.N. Waweru",
+      "member": "5 months",
+      "last": "Sunday afternoon",
+      "activity": 3,
+      "img": "../src/mages/avatar.png"
+    },
+    {
+      "id": 3,
+      "name": "Patricia",
+      "member": "5 months",
+      "last": "Monday afternoon",
+      "activity": 1,
+      "img": "../src/images/avatar.png"
+    },
+    {
+      "id": 4,
+      "name": "Eva",
+      "question": "Will insulin make my patient gain weight?",
+      "img": "../src/images/avatar.png"
+    },
+    {
+      "id": 5,
+      "name": "Andrew",
+      "question": "Vegan diet in diabetes treatment?",
+      "img": "../images/avatar.png"
+    },
+    {
+      "id": 6,
+      "name": "Joseph",
+      "question": "Vegan diet to stop diabetes progress",
+      "img": "../images/avatar.png"
+    }
+  ]
