@@ -5,14 +5,14 @@ import {
   Route
 } from 'react-router-dom'
 
-import Profile from './containers/Profile'
+import Modal from './containers/Modal'
 import Template from './containers/Template'
 
 ReactDOM.render((
   <Router>
     <div>
         <Route exact path="/" component={Template} />
-        <Route path="/profile" component={Profile} />
+        <Route path="/profile" component={Modal} />
     </div>
   </Router>
 ),document.getElementById('root'))

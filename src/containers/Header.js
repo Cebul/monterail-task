@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import Button from 'material-ui/Button'
-import {KeyboardArrowLeft, AddCircle} from 'material-ui-icons'
 import Radio, {RadioGroup} from 'material-ui/Radio'
 import {Link} from 'react-router-dom'
 import Grid from 'material-ui/Grid'
 import {FormControlLabel} from 'material-ui/Form'
 import TextField from 'material-ui/TextField'
+import Icon from 'material-ui/Icon'
+import Divider from 'material-ui/Divider'
 
 const styles = {
   headerStyle: {
@@ -20,23 +21,48 @@ const styles = {
   linkLabel: {
     textDecoration: "none",
     fontWeight: "bold"
+  },
+  arrows: {
+    width: 40,
+    height: 40,
+    borderRadius: "50%",
+    backgroundColor: "#fff",
+    color: "#B1B2B6",
+    fontSize: 40,
+    lineHight: 30,
+    textAlign: "center",
+    padding: 10,
+    border: "2px solid #B1B2B6"
+  },
+  arrowContainer: {
+    paddingLeft: 30,
+    paddingRight: 30
+  },
+  radioButtons: {
+    display: "inline-flex"
+  },
+  addCircle: {
+    fontSize: 40
+  },
+  searchBox: {
+    width: "80%"
   }
 }
-
-
 
 const Title = () => {
   return (
     <div>
       <Grid container>
-        <Grid item>
-          <KeyboardArrowLeft style={styles.backArrow} />
+        <Grid item lg={4}>
+          <div style={styles.arrowContainer}>
+            <Icon style={styles.arrows}>keyboard_arrow_left</Icon>
+          </div>
         </Grid>
-        <Grid item >
+        <Grid item lg={4}>
           <h1>QUESTIONS</h1>
         </Grid>
-        <Grid>
-          <AddCircle style={styles.backArrow} />
+        <Grid item lg={4}>
+          <Icon color="primary" style={styles.addCircle}>add_circle</Icon>
         </Grid>
       </Grid>
     </div>
@@ -55,19 +81,23 @@ class ToggleMenu extends Component {
 
   render() {
     return (
-      <div>
-        <RadioGroup onChange={this.handleChange}>
-          <FormControlLabel
-            control={<Radio
-              checked={this.state.value === 'my'}
-              value="my" aria-label="My" />}
-            label="My shelf" />
-          <FormControlLabel
-            control={<Radio
-              checked={this.state.value === 'all'}
-              value="all" aria-label="All" />}
-            label="All questions" />
-        </RadioGroup>
+      <div style={styles.radioButtons}>
+        <FormControlLabel
+          control={<Radio
+            onChange={this.handleChange}
+            checked={this.state.value === 'my'}
+            value="my"
+            aria-label="My"
+          />}
+          label="My shelf" />
+        <FormControlLabel
+          control={<Radio
+            onChange={this.handleChange}
+            checked={this.state.value === 'all'}
+            value="all"
+            aria-label="All"
+          />}
+          label="All questions" />
       </div>
     )
   }
@@ -86,15 +116,20 @@ const SortBy = () => {
 
 const Search = () => {
   return (
-    <div>
-      <TextField
-        id="search"
-        label="Search questions"
-        type="search"
-        margin="normal"
-      />
-      <Button raised>SEARCH</Button>
-    </div>
+    <Grid container>
+      <Grid item md={8} lg={8}>
+        <TextField
+          id="search"
+          label="Search questions"
+          type="search"
+          margin="normal"
+          style={styles.searchBox}
+        />
+      </Grid>
+      <Grid item md={4} lg={4}>
+        <Button raised>SEARCH</Button>
+      </Grid>
+    </Grid>
   )
 }
 
@@ -102,21 +137,12 @@ const Header = () => {
   return (
     <div>
       <Grid container>
-        <Grid item xs={12} sm={6} md={4} lg={4}>
-          <Title />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={4}>
-          <ToggleMenu />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={4}>
-          <SortBy />
-        </Grid>
+        <Title />
+        <ToggleMenu />
+        <SortBy />
       </Grid>
-      <Grid container>
-        <Grid item xs={12} sm={6} md={12} lg={12}>
-          <Search />
-        </Grid>
-      </Grid>
+      <Search />
+      <Divider />
     </div>
   )
 }

@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import $ from 'jquery'
 import QuestionsList from './QuestionsList'
+import Modal from './Modal'
+import '../styled/Template.css'
 
 class Question extends Component {
 
@@ -55,13 +57,27 @@ class Question extends Component {
         value={user.id}
       />
     ))
+  }
 
+  userModal() {
+    return (
+      <Modal
+         users={this.state.users}
+         currentUser={this.state.currentUser}
+         open={this.state.open}
+         handleRequestClose={this.handleRequestClose}
+      />
+    )
   }
 
   render() {
+
+    if(!this.state.users) return <div className="loader"></div>
+
     return (
       <div>
-        {this.renderQuestions()}    
+        {this.renderQuestions()}
+        {/* {this.userModal()} */}
       </div>
     )
   }

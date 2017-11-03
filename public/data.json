@@ -1,4 +1,4 @@
-[ 
+[
     {
       "id": 1,
       "name": "Dr. Halima",
@@ -11,6 +11,7 @@
     {
       "id": 2,
       "name": "S.E.N. Waweru",
+      "title": "How it all started",
       "member": "5 months",
       "last": "Sunday afternoon",
       "activity": 3,
@@ -20,6 +21,7 @@
       "id": 3,
       "name": "Patricia",
       "member": "5 months",
+      "title": "How it all started",
       "last": "Monday afternoon",
       "activity": 1,
       "img": "../src/images/avatar.png"
